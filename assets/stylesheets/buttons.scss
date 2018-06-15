@@ -1,0 +1,99 @@
+.ant-btn{
+  font-size: 15px;
+  line-height: 1em;
+  height: auto!important;
+  font-family: "Avenir Next LT W01 Demi";
+  padding: 12px 20px;
+}
+.side-bar button, .side-bar .ant-btn {
+  width: 100%;
+  display: block;
+}
+.ant-btn-primary, .ant-btn-primary:visited {
+  color: #fff;
+  background-color: #e85057;
+  border-color: #e85057;
+}
+.ant-btn-primary:hover, .ant-btn-primary:active, .ant-btn-primary:focus{
+  background-color: #c14348;
+  border-color: #c14348;
+}
+
+.ant-btn-primary.ant-btn-clicked:after {
+  border: 0 solid #c14348;
+}
+
+.ant-btn-sm {
+  padding: 10px 15px;
+  font-size: 12px;
+}
+.ant-btn-lg {
+  padding: 21px 40px;
+}
+a.ant-btn-lg.button-floated {
+  line-height: 1em!important;
+}
+.ant-btn.ant-btn-link{
+  border-color: transparent;
+}
+
+.btn-block{
+  display: block;
+  width: 100%;
+}
+.btn-link{
+  border-color: transparent;
+}
+.btn-rounded{
+  border-radius: 30px;
+}
+
+.btn-sm-block{
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.ant-btn.btn-icon-nav.ant-btn-circle {
+  margin-bottom: 25px;
+}
+
+@media (min-width: 1441px){
+  .ant-btn{
+    padding: 12px 30px;
+  }
+}
+@media (min-width: 576px){
+  .btn-sm-block{
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0;
+  }
+  .ant-btn.btn-icon-nav.ant-btn-circle {
+    margin-bottom: 0px;
+  }
+}
+
+.btn-icon-nav, .btn-icon-nav[disabled]{
+  height: 45px!important;
+  width: 45px;
+  line-height: 10px!important;
+  border: 0!important;
+  -webkit-box-shadow: 0px 1px 10px -5px rgba(0, 0, 0, 0.8)!important;
+  box-shadow: 0px 1px 10px -5px rgba(0, 0, 0, 0.8)!important;
+  padding: 0px 10px;
+}
+.button-floated{
+  border-radius: 30px;
+  border:0!important;
+  box-shadow: 0px 1px 10px -5px rgba(0, 0, 0, 0.8)!important;
+}
+
+.cover-image .img-remove{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.cover-image .img-remove i{
+  padding: 0;
+  font-size: 30px;
+}

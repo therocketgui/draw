@@ -1,0 +1,108 @@
+.card.ant-card-bordered{
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0;
+  border: 0;
+}
+.ant-card-bordered{
+  border-radius: 8px;
+}
+
+.ant-card-actions {
+  border-top: 1px solid #e8e8e8;
+  background: #fff;
+}
+.card .ant-card-head-title, .ant-card-extra{
+  font-size: 1em;
+  color: rgba(0,0,0,.4);
+  padding: 16px 0 0!important;
+}
+.ant-card.p-0 .ant-card-body{
+  padding: 0;
+}
+.card .ant-card-head{
+  line-height: 32px;
+  border-bottom: 0;
+  min-height: auto;
+}
+.banner-card{
+  background-color: #00A1FF;
+  border: none;
+}
+.card .ant-card-body .avatar{
+  margin: 0 auto;
+  display: block!important;
+}
+
+.card .card-title, .card, .card-sub .card-count {
+  text-align: center;
+}
+.avatar-circle{
+  border-radius: 100%;
+}
+.ant-avatar-string{
+  vertical-align: middle;
+  text-align: center;
+}
+.card .card-title {
+  display: block;
+  font-weight: 700;
+  font-size: 1.28571429em;
+  margin-top: -.21425em;
+  line-height: 1.28571429em;
+  min-height: 30px;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  color: rgba(0,0,0,.85);
+}
+.card .card-sub, .card-count {
+  font-size: 1em;
+  color: rgba(0,0,0,.4);
+  min-height: 30px;
+}
+
+.card {
+  border: 1px solid #E8E8E8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+
+.card .card-desc {
+  padding:0;
+  margin:0;
+  text-align: center;
+}
+
+.team-card .avatar {
+  border: 3px solid #fff!important;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.team-card .btn-card-wrapper {
+  text-align: center;
+  width: 100%;
+  min-height: 100px!important;
+}
+
+.draw-card .avatar {
+  margin-top: -70px!important;
+  border: 3px solid #fff!important;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.card .avatar.rounded > div, .card .avatar.rounded img {
+  border-radius: 7px!important;
+}
+.card .avatar.circle > div, .card .avatar.circle img {
+  border-radius: 50%!important;
+}
+
+.card-rounded{
+  border-radius: 3px;
+}
