@@ -8,23 +8,23 @@ class CardTeam extends Component {
       <Row type="flex" justify="space-around" align="middle">
         <Card
           style={{ width: 300 }}
-          className="card team-card"
+          className="card team-card mb-20"
           hoverable={false}
         >
           <Avatar
             size="large"
             className="avatar rounded mb-30"
-            src="http://localhost:8080/src/images/manu.png"
+            src={`http://localhost:8080/src/images/${this.props.image}`}
             style={{backgroundColor: '#F7F7F7'}}
           />
           <p className="mb-10 card-title">
-            Jean Jean
+            {this.props.name}
           </p>
           <p className="mb-10 card-sub">
-            Hacker & Painter
+            {this.props.title}
           </p>
-          <p className="mb-30 card-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+          <p className="mb-30 card-desc team-card-desc">
+            {this.props.description}
           </p>
         </Card>
       </Row>

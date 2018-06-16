@@ -2,8 +2,137 @@
 @import "cards";
 @import "spacing";
 @import "buttons";
+@import "inputs";
+@import "menus";
+@import "containers";
 
-.app {
+@media only screen and (max-width: 1000px) {
+  .no-display {
+    display: none!important;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .Gain {
+    .gain-card-top {
+      top: 0!important;
+      margin-bottom: 20px;
+    }
+    .gain-card-bot {
+      bottom: 0!important;
+      margin-bottom: 20px;
+    }
+  }
+  .Header {
+    h1 {
+      font-size: 48px!important;
+      font-weight: 800;
+      line-height: 54px!important;
+    }
+    .header-cta-wrapper {
+      width: 100%!important;
+    }
+  }
+  .Cards-bg {
+    background: url('/src/images/header-wave-small.svg')!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+
+    margin-top: -180px;
+  }
+  .Cards {
+    padding-top: 240px!important;
+  }
+}
+
+.Container-bg-grey {
+  background-color: #fafafa;
+}
+.Cards-bg {
+  background: url('/src/images/header-wave.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+
+  margin-top: -180px;
+  .Cards {
+    padding-top: 200px;
+  }
+}
+
+.Header {
+  h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 60px;
+  }
+  .header-cta-wrapper {
+    width: 70%;
+  }
+  svg {
+    height: 600px;
+    width: 90%!important;
+  }
+}
+h2 {
+  font-size: 30px;
+  font-weight: 800;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+
+
+.How {
+  h2 {
+    margin-bottom: 0px!important;
+  }
+  padding-bottom: 200px;
+  .no-t {
+    top: 0!important;
+  }
+  .how-line-wrapper {
+    top: 150px;
+    height:100%!important;
+  }
+  .how-line {
+    display: block;
+    width: 2px;
+    height: 300px!important;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #7c7c7c;
+  }
+  .how-bullet {
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 150px;
+    background-color: #7c7c7c;
+  }
+}
+
+.Gain {
+  .gain-bg {
+    background: url('/src/images/gains-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    margin-left:auto;
+    margin-right:auto;
+    height: 300px;
+    width: 300px;
+    z-index:1;
+  }
+  .gain-card {
+    z-index:100;
+  }
+  .gain-card-top {
+    top: 50px;
+  }
+  .gain-card-bot {
+    bottom: 100px;
+  }
 }

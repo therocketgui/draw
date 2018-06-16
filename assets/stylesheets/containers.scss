@@ -1,0 +1,53 @@
+.app {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Header {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+.Container {
+  padding-top:50px;
+  padding-bottom:50px;
+
+  padding-left: 120px;
+  padding-right: 120px;
+}
+.Gain {
+  padding-left: 400px;
+  padding-right: 400px;
+}
+.Team {
+  padding-left: 300px;
+  padding-right: 300px;
+}
+.How {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+@media only screen and (max-width: 700px) {
+  .Header {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .Container {
+    padding-top:30px;
+    padding-bottom:30px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .Gain {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .Team {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .How {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}

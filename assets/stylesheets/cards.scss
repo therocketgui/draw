@@ -1,3 +1,67 @@
+@media only screen and (max-width: 700px) {
+  .How {
+    .how-card {
+      margin-bottom: 120px !important;
+    }
+    .how-card.left {
+      top: 100px;
+      left: 0!important;
+    }
+    .how-card.right {
+      top: 100px;
+      right: 0!important;
+    }
+    .how-card-bg {
+      // background: url('/src/images/how-card-bg.png');
+      background-repeat: no-repeat;
+      background-size: 70%;
+      width: 100%;
+    }
+    .how-card-bg.left {
+      background-position: center top;
+    }
+    .how-card-bg.right {
+      background-position: center top;
+    }
+  }
+}
+
+.How {
+  .how-card.left {
+    top: 100px;
+    left: 60px;
+  }
+  .how-card.right {
+    top: 100px;
+    right: 60px;
+  }
+  .how-card-bg {
+    // background: url('/src/images/how-card-bg.png');
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-position: left top;
+
+    width: 100%;
+
+  }
+  .how-card-bg.left {
+    background-position: left top;
+  }
+  .how-card-bg.right {
+    background-position: right top;
+  }
+}
+
+.Gain {
+  .gain-card {
+    width:200px !important;
+  }
+}
+.team-card-desc {
+  padding-left:10%!important;
+  padding-right: 10%!important;
+}
+
 .card.ant-card-bordered{
   width: 100%;
   border-radius: 8px;
@@ -56,6 +120,7 @@
   font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
   color: rgba(0,0,0,.85);
 }
+
 .card .card-sub, .card-count {
   font-size: 1em;
   color: rgba(0,0,0,.4);
@@ -85,6 +150,10 @@
   text-align: center;
   width: 100%;
   min-height: 100px!important;
+}
+
+.how-card .card-title, .how-card .card-sub {
+  text-align: left!important;
 }
 
 .draw-card .avatar {
