@@ -136,3 +136,88 @@ h2 {
     bottom: 100px;
   }
 }
+
+.Draw-Header {
+  background-color: #e7e7e7;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  height: 300px;
+  padding-left: 10%;
+  padding-right: 10%;
+  .title{
+    position: relative;
+    height:100%!important;
+    width:100%;
+    padding-left: 20px;
+  }
+  h1{
+    font-size: 40px;
+    font-weight: 800;
+    position:absolute;
+    top: 250px;
+  }
+}
+
+.Draw-Main {
+  .avatar {
+    border: 3px solid #fff!important;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+  }
+  .Draw-Main-Sub {
+    height:45px;
+    border-bottom: 1px solid #eeeeee;
+    padding-left: 10%;
+    padding-right: 10%;
+    .center-text {
+      text-align:center;
+      vertical-align:middle;
+      p {
+        line-height: 45px;
+        span {
+          // font-weight: 900;
+        }
+      }
+    }
+  }
+  .Draw-Card {
+    border: 1px solid #eeeeee;
+    // border-radius: 7px;
+    padding: 20px;
+  }
+  .Draw-Blocs {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .Draw-Bloc {
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+  .Logo-Bloc {
+    margin-top: -175px;
+  }
+  .description {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+
+    min-height: 500px;
+  }
+  .infos {
+    padding-left: 30px;
+    padding-right: 30px;
+    h3 {
+      text-align: center;
+    }
+    p {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .cta {
+      text-align: center;
+    }
+  }
+}

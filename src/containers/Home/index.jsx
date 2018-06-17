@@ -12,7 +12,6 @@ import { draws } from './../../data/data.js';
 class Home extends Component {
 
   render(){
-    console.log(draws);
     return (
       <div>
         <div className="Header">
