@@ -71,6 +71,6 @@ const draws = [
     logo: "ada.png",
     background: "draw-bg.png"
   }
-]
+];
 
 export default draws;
