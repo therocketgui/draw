@@ -14,7 +14,7 @@ class CardTeam extends Component {
           <Avatar
             size="large"
             className="avatar rounded mb-10"
-            src={`http://localhost:8080/src/images/${this.props.image}`}
+            // src={`http://localhost:8080/src/images/${this.props.image}`}
             style={{backgroundColor: '#F7F7F7'}}
           />
           <p className="mb-10 card-title">

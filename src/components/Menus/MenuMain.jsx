@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
 import {Row, Col} from 'antd';
+import { Link } from 'react-router-dom';
 
 class MenuMain extends Component {
   state = {
@@ -20,6 +21,9 @@ class MenuMain extends Component {
         selectedKeys={[this.state.current]}
         mode="horizontal"
         >
+          <Menu.Item key="home">
+            <Link to="/">Home</Link>
+          </Menu.Item>
           <Menu.Item key="howitworks">
             How it Works
           </Menu.Item>

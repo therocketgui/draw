@@ -1,20 +1,44 @@
 import React, { Component } from 'react';
 import {Row, Col, Input, Button, Card, Icon, Avatar} from 'antd';
 
-class Draw extends Component {
+import { bindActionCreators } from 'redux';
+import { fetchDraw, setRegister, setRegisterVisible } from './../../actions';
+import { connect } from 'react-redux';
 
+import MenuMain from './../../components/Menus/MenuMain';
+import Register from './../../containers/Common/Register';
+
+class Draw extends Component {
+  componentDidMount() {
+    if (!this.props.draw) {
+      this.props.fetchDraw(this.props.match.params.id);
+    }
+  }
+  renderRegister = () => {
+    this.props.setRegisterVisible(true);
+    this.props.setRegister(this.props.draw);
+  }
   render(){
+    if (!this.props.draw){
+      return <p>Loading...</p>;
+    }
     return (
       <div>
+        <div className="Header">
+          <div className="MenuMain-Container">
+            <MenuMain />
+            <Register data={this.props.register} />
+          </div>
+        </div>
         <div
           className="Draw-Header"
-          // style={{backgroundImage: `url(/src/images/random-bg.png)`}}
+          style={{backgroundImage: `url(/src/images/${this.props.draw.background}`}}
         >
           <Row type="flex" justify="space-between" align="bottom">
             <Col span={6} />
             <Col span={18}>
               <div className="title">
-                <h1>EOS - Whale Edition</h1>
+                <h1>{this.props.draw.coin} - {this.props.draw.title}</h1>
               </div>
             </Col>
           </Row>
@@ -37,21 +61,22 @@ class Draw extends Component {
                     <Avatar
                       size="large"
                       className="avatar rounded mb-15"
-                      src={`/src/images/eos.png`}
+                      src={`/src/images/${this.props.draw.logo}`}
                       style={{backgroundColor: '#F7F7F7'}}
                     />
                   </div>
                   <div className="Draw-Card infos">
                     <div>
                       <h3>Infos</h3>
-                      <p>Starts on block 342.123</p>
-                      <p>Ends on block 352.123</p>
+                      <p>Starts on block {this.props.draw.start}</p>
+                      <p>Ends on block {this.props.draw.end}</p>
                       <p>Duration Estimation: 12 days</p>
                     </div>
                     <div className="cta">
                       <Button
                         className="btn-rounded"
                         size="large"
+                        onClick={this.renderRegister}
                       >
                         Join Draw
                       </Button>
@@ -63,16 +88,7 @@ class Draw extends Component {
                 <div className="Draw-Bloc Draw-Card description">
                   <div>
                     <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolormque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consecteturd.
-                    </p>
-                    <p>
-                      0.5% of the pot will go to Charity X. Check their website here: www.charityX.com.
-                    </p>
-                    <p>
-                      Warnings: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
-                    </p>
-                    <p>
-                      Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+                      {this.props.draw.description}
                     </p>
                   </div>
                 </div>
@@ -85,4 +101,23 @@ class Draw extends Component {
   }
 }
 
-export default Draw;
+function mapStateToProps(state, ownProps){
+  const idFromUrl = ownProps.match.params.id;
+  const draw = state.draws.find(p => p.id == idFromUrl);
+  return {
+    draw: draw,
+    register: state.register,
+    registerVisible: state.registerVisible
+  };
+}
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators(
+    {
+      fetchDraw: fetchDraw,
+      setRegister: setRegister,
+      setRegisterVisible: setRegisterVisible
+    }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Draw);

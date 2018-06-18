@@ -61,6 +61,8 @@
 }
 
 .Header {
+  background-color: none;
+  min-height:90px;
   h1 {
     font-size: 50px;
     font-weight: 800;
@@ -138,11 +140,12 @@ h2 {
 }
 
 .Draw-Header {
+  margin-top: -90px;
   background-color: #e7e7e7;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  height: 300px;
+  height: 375px;
   padding-left: 10%;
   padding-right: 10%;
   .title{
@@ -155,7 +158,7 @@ h2 {
     font-size: 40px;
     font-weight: 800;
     position:absolute;
-    top: 250px;
+    top: 315px;
   }
 }
 
@@ -220,4 +223,37 @@ h2 {
       text-align: center;
     }
   }
+}
+
+.Register-Modal {
+  .Register-Wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .ant-modal-footer {
+    display: none;
+  }
+  .Register-Avatar {
+    text-align: center;
+    min-height: 125px;
+    .avatar-reg {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .Register-Description {
+    text-align: center;
+    h2 {
+      font-size: 24px!important;
+      font-weight: 800;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px!important;
+    }
+  }
+}
+.ant-form-item {
+  margin-bottom: 0!important;
 }

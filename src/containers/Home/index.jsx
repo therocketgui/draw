@@ -5,34 +5,40 @@ import CardDraw from './../../components/Cards/CardDraw';
 import CardTeam from './../../components/Cards/CardTeam';
 import CardHow from './../../components/Cards/CardHow';
 import CardGain from './../../components/Cards/CardGain';
+import FormMain from './../../components/Forms/FormMain';
+import Register from './../../containers/Common/Register';
+
 import Rocket from 'react-svg-loader!./../../images/rocket.svg';
 
-import { draws } from './../../data/data.js';
+// import { draws } from './../../data/data.js';
+
+import { bindActionCreators } from 'redux';
+import { setDraws, setRegister, setRegisterVisible } from './../../actions';
+import { connect } from 'react-redux';
 
 class Home extends Component {
-
-  render(){
+  componentWillMount() {
+    this.props.setDraws();
+  }
+  renderRegister = (draw) => {
+    this.props.setRegisterVisible(true);
+    this.props.setRegister(draw);
+  }
+  render() {
     return (
       <div>
         <div className="Header">
           <Row>
             <div className="MenuMain-Container">
               <MenuMain />
+              <Register data={this.props.register} />
             </div>
           </Row>
           <Row type="flex" justify="space-around" align="middle">
             <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 12 }} xl={{ span: 12 }}>
               <h1>A Truly Decentralized “Winner Takes All” Open Source Lottery - Powered by Ethereum</h1>
               <div className="header-cta-wrapper">
-                <Input
-                  placeholder="Email"
-                  className="Main-Input mb-10"
-                />
-                <Button
-                  className="Main-Cta"
-                >
-                  Get notified when we launch!
-                </Button>
+                <FormMain />
               </div>
             </Col>
             <Col span={12}>
@@ -46,8 +52,12 @@ class Home extends Component {
         <div className="Cards-bg">
           <div className="Container Cards">
             <Row gutter={8}>
-              {draws.map((draw) =>
-                  <CardDraw key={draw.id} data={draw} />
+              {this.props.draws.map((draw) =>
+                  <CardDraw
+                    key={draw.id}
+                    data={draw}
+                    renderRegister={this.renderRegister}
+                  />
                 )
               }
             </Row>
@@ -171,7 +181,7 @@ class Home extends Component {
               <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 12 }}>
                 <CardTeam
                   image={'guillaume.png'}
-                  name={'Guillaume De Sa'}
+                  name={'GD'}
                   title={'Crypto Nerd'}
                   description={'Growth Engineer, Product Designer and Front-end Developper. Hacker & Painter.'}
                 />
@@ -179,7 +189,7 @@ class Home extends Component {
               <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 12 }}>
                 <CardTeam
                   image={'manu.png'}
-                  name={'Manu Vacher'}
+                  name={'MV'}
                   title={'Crypto Nerd'}
                   description={'Systems Engineer, Back-end Engineer & Ethereum Developper. Polytechnique & Telecom Paris.'}
                 />
@@ -200,4 +210,21 @@ class Home extends Component {
   }
 }
 
-export default Home;
+function mapDispatchToProps(dispatch){
+  return bindActionCreators(
+    {setDraws: setDraws,
+     setRegister: setRegister,
+     setRegisterVisible: setRegisterVisible},
+    dispatch
+  );
+}
+
+function mapStateToProps(state){
+  return {
+    draws: state.draws,
+    register: state.register,
+    registerVisible: state.registerVisible
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

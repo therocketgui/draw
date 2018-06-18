@@ -1,4 +1,4 @@
-export const draws = [
+const draws = [
   {
     id: 1,
     start: "256367",
@@ -8,7 +8,8 @@ export const draws = [
     status: "upcoming",
     bet: 10,
     entries: 0,
-    logo: "eos.png"
+    logo: "eos.png",
+    background: "draw-bg.png"
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ export const draws = [
     status: "upcoming",
     bet: 100,
     entries: 0,
-    logo: "eos.png"
+    logo: "eos.png",
+    background: "draw-bg.png"
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ export const draws = [
     status: "upcoming",
     bet: 1,
     entries: 0,
-    logo: "eos.png"
+    logo: "eos.png",
+    background: "draw-bg.png"
   },
   {
     id: 4,
@@ -41,7 +44,8 @@ export const draws = [
     status: "upcoming",
     bet: 10,
     entries: 0,
-    logo: "ada.png"
+    logo: "ada.png",
+    background: "draw-bg.png"
   },
   {
     id: 5,
@@ -52,7 +56,8 @@ export const draws = [
     status: "upcoming",
     bet: 100,
     entries: 0,
-    logo: "ada.png"
+    logo: "ada.png",
+    background: "draw-bg.png"
   },
   {
     id: 6,
@@ -63,6 +68,9 @@ export const draws = [
     status: "upcoming",
     bet: 1,
     entries: 0,
-    logo: "ada.png"
+    logo: "ada.png",
+    background: "draw-bg.png"
   }
 ]
+
+export default draws;
