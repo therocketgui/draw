@@ -25,13 +25,13 @@ class MenuMain extends Component {
           <Menu.Item key="home">
             <Link href="/" to="/">Home</Link>
           </Menu.Item>
-          <Menu.Item key="howitworks">
+          <Menu.Item key="howitworks" className="no-display">
             How it Works
           </Menu.Item>
-          <Menu.Item key="gains">
+          <Menu.Item key="gains" className="no-display">
             Gains
           </Menu.Item>
-          <Menu.Item key="meettheteam">
+          <Menu.Item key="meettheteam" className="no-display">
             Meet the Team
           </Menu.Item>
         </Menu>

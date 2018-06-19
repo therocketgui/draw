@@ -55,9 +55,29 @@ class Draw extends Component {
           className="Draw-Header"
           style={{ backgroundImage: `url(/src/images/${background}` }}
         >
+          <div className="logo display">
+            <Avatar
+              size="large"
+              className="avatar rounded mb-15"
+              src={`/src/images/${logo}`}
+              style={{ backgroundColor: "#F7F7F7" }}
+            />
+          </div>
           <Row type="flex" justify="space-between" align="bottom">
-            <Col span={6} />
-            <Col span={18}>
+            <Col
+              xs={{ span: 24 }}
+              sm={{ span: 24 }}
+              md={{ span: 24 }}
+              lg={{ span: 6 }}
+              xl={{ span: 6 }}
+            />
+            <Col
+              xs={{ span: 24 }}
+              sm={{ span: 24 }}
+              md={{ span: 24 }}
+              lg={{ span: 18 }}
+              xl={{ span: 18 }}
+            >
               <div className="title">
                 <h1>{coin} - {title}</h1>
               </div>
@@ -68,17 +88,65 @@ class Draw extends Component {
         <div className="Draw-Main">
           <div className="Draw-Main-Sub">
             <Row type="flex" justify="space-between" align="middle">
-              <Col span={6} />
-              <Col span={6}><div className="center-text"><p>Pot Size: <span>17,837</span> EOS (1,230,000$)</p></div></Col>
-              <Col span={6}><div className="center-text"><p>Participants: <span>2,345</span></p></div></Col>
-              <Col span={6}><div className="center-text"><p>Ends in approx. <span>5 days, 23 hours</span></p></div></Col>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 6 }}
+                xl={{ span: 6 }}
+              />
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 6 }}
+                xl={{ span: 6 }}
+              >
+                <div className="center-text">
+                  <p>
+                    Pot Size: <span>17,837</span> EOS (1,230,000$)
+                  </p>
+                </div>
+              </Col>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 6 }}
+                xl={{ span: 6 }}
+              >
+                <div className="center-text">
+                  <p>
+                    Participants: <span>2,345</span>
+                  </p>
+                </div>
+              </Col>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 6 }}
+                xl={{ span: 6 }}
+              >
+                <div className="center-text">
+                  <p>
+                    Ends in approx. <span>5 days, 23 hours</span>
+                  </p>
+                </div>
+              </Col>
             </Row>
           </div>
           <div className="Draw-Blocs">
             <Row>
-              <Col span={6}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 6 }}
+                xl={{ span: 6 }}
+              >
                 <div className="Draw-Bloc Logo-Bloc">
-                  <div className="logo">
+                  <div className="logo no-display">
                     <Avatar
                       size="large"
                       className="avatar rounded mb-15"
@@ -105,7 +173,13 @@ class Draw extends Component {
                   </div>
                 </div>
               </Col>
-              <Col span={18}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 18 }}
+                xl={{ span: 18 }}
+              >
                 <div className="Draw-Bloc Draw-Card description">
                   <div>
                     <p>
