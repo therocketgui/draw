@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import {Row, Col, Input, Button, Card, Icon, Avatar} from 'antd';
+import { Avatar, Button, Col, Row } from 'antd';
+import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
 import { fetchDraw, setRegister, setRegisterVisible } from './../../actions';
-import { connect } from 'react-redux';
 
 import MenuMain from './../../components/Menus/MenuMain';
 import Register from './../../containers/Common/Register';
+
 
 class Draw extends Component {
   componentDidMount() {
@@ -14,31 +15,47 @@ class Draw extends Component {
       this.props.fetchDraw(this.props.match.params.id);
     }
   }
+
   renderRegister = () => {
     this.props.setRegisterVisible(true);
     this.props.setRegister(this.props.draw);
-  }
-  render(){
-    if (!this.props.draw){
+  };
+
+  render() {
+    if (!this.props.draw) {
       return <p>Loading...</p>;
     }
+
+    const {
+      register,
+      draw: {
+        background,
+        coin,
+        description,
+        end,
+        logo,
+        start,
+        title,
+      },
+    } = this.props;
+
     return (
       <div>
         <div className="Header">
           <div className="MenuMain-Container">
             <MenuMain />
-            <Register data={this.props.register} />
+            <Register data={register} />
           </div>
         </div>
         <div
           className="Draw-Header"
-          style={{backgroundImage: `url(/src/images/${this.props.draw.background}`}}
+          style={{ backgroundImage: `url(/src/images/${background}` }}
         >
           <Row type="flex" justify="space-between" align="bottom">
             <Col span={6} />
             <Col span={18}>
               <div className="title">
-                <h1>{this.props.draw.coin} - {this.props.draw.title}</h1>
+                <h1>{coin} - {title}</h1>
               </div>
             </Col>
           </Row>
@@ -46,8 +63,8 @@ class Draw extends Component {
 
         <div className="Draw-Main">
           <div className="Draw-Main-Sub">
-            <Row  type="flex" justify="space-between" align="middle">
-              <Col span={6}></Col>
+            <Row type="flex" justify="space-between" align="middle">
+              <Col span={6} />
               <Col span={6}><div className="center-text"><p>Pot Size: <span>17,837</span> EOS (1,230,000$)</p></div></Col>
               <Col span={6}><div className="center-text"><p>Participants: <span>2,345</span></p></div></Col>
               <Col span={6}><div className="center-text"><p>Ends in approx. <span>5 days, 23 hours</span></p></div></Col>
@@ -61,15 +78,15 @@ class Draw extends Component {
                     <Avatar
                       size="large"
                       className="avatar rounded mb-15"
-                      src={`/src/images/${this.props.draw.logo}`}
-                      style={{backgroundColor: '#F7F7F7'}}
+                      src={`/src/images/${logo}`}
+                      style={{ backgroundColor: "#F7F7F7" }}
                     />
                   </div>
                   <div className="Draw-Card infos">
                     <div>
                       <h3>Infos</h3>
-                      <p>Starts on block {this.props.draw.start}</p>
-                      <p>Ends on block {this.props.draw.end}</p>
+                      <p>Starts on block {start}</p>
+                      <p>Ends on block {end}</p>
                       <p>Duration Estimation: 12 days</p>
                     </div>
                     <div className="cta">
@@ -88,7 +105,7 @@ class Draw extends Component {
                 <div className="Draw-Bloc Draw-Card description">
                   <div>
                     <p>
-                      {this.props.draw.description}
+                      {description}
                     </p>
                   </div>
                 </div>
@@ -101,23 +118,22 @@ class Draw extends Component {
   }
 }
 
-function mapStateToProps(state, ownProps){
+function mapStateToProps(state, ownProps) {
   const idFromUrl = ownProps.match.params.id;
-  const draw = state.draws.find(p => p.id == idFromUrl);
+  const draw = state.draws.find(p => p.id === idFromUrl);
   return {
-    draw: draw,
+    draw,
     register: state.register,
     registerVisible: state.registerVisible
   };
 }
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators(
-    {
-      fetchDraw: fetchDraw,
-      setRegister: setRegister,
-      setRegisterVisible: setRegisterVisible
-    }, dispatch);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    fetchDraw,
+    setRegister,
+    setRegisterVisible,
+  }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Draw);

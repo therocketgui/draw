@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
-import { Menu, Icon } from 'antd';
-import {Row, Col} from 'antd';
+import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 
 class MenuMain extends Component {
   state = {
-  current: 'mail',
-  }
+    current: 'mail',
+  };
+
   handleClick = (e) => {
     console.log('click ', e);
     this.setState({
       current: e.key,
     });
-  }
-  render(){
+  };
+
+  render() {
     return (
       <div>
         <Menu
-        onClick={this.handleClick}
-        selectedKeys={[this.state.current]}
-        mode="horizontal"
+          onClick={this.handleClick}
+          selectedKeys={[this.state.current]}
+          mode="horizontal"
         >
           <Menu.Item key="home">
-            <Link to="/">Home</Link>
+            <Link href="/" to="/">Home</Link>
           </Menu.Item>
           <Menu.Item key="howitworks">
             How it Works

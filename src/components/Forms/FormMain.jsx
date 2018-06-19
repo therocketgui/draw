@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import { Form, Button, Input, notification } from 'antd';
-const FormItem = Form.Item;
+
+const { FormItem } = Form;
+
+function triggerNotification () {
+  notification.open({
+    message: 'Welcome on board :)',
+    description: 'You\'ll be the first person notified when we launch and will enjoy special perks & lotteries. We\'re glad to have you as one of our first futur user!',
+  });
+}
+
 
 class FormMain extends Component {
   handleSubmit = (e) => {
@@ -12,17 +21,12 @@ class FormMain extends Component {
       if (!err) {
         console.log('Received values of form: ', values);
         e.target.reset();
-        this.triggerNotification();
+        triggerNotification();
       }
     });
-  }
-  triggerNotification() {
-    notification.open({
-      message: 'Welcome on board :)',
-      description: 'You\'ll be the first person notified when we launch and will enjoy special perks & lotteries. We\'re glad to have you as one of our first futur user!',
-    });
-  }
-  render(){
+  };
+
+  render() {
     const { getFieldDecorator } = this.props.form;
     return (
       <div>
@@ -30,12 +34,7 @@ class FormMain extends Component {
           <FormItem>
             {getFieldDecorator('email', {
               rules: [{ required: true }],
-            })(
-              <Input
-                placeholder="Email"
-                className="Main-Input mb-10"
-              />
-            )}
+            })(<Input placeholder="Email" className="Main-Input mb-10" />)}
           </FormItem>
           <FormItem>
             <Button

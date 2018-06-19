@@ -1,31 +1,38 @@
 import React, { Component } from 'react';
-import { Row, Avatar, Modal, Button, Input } from 'antd';
+import { Avatar, Modal } from 'antd';
+import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
 import { setRegisterVisible } from './../../../actions';
 import FormMain from './../../../components/Forms/FormMain';
-import { connect } from 'react-redux';
+
 
 class Register extends Component {
   state = {
     confirmLoading: false
-  }
+  };
+
   handleCancel = () => {
     this.props.setRegisterVisible(false);
-  }
+  };
+
   handleOk = () => {
     this.props.setRegisterVisible(false);
-  }
+  };
+
   render() {
     const { confirmLoading } = this.state;
 
     if (!this.props.register) {
       return <p>Loading...</p>;
     }
+
+    const { registerVisible, register: { coin, logo, title } } = this.props;
+
     return (
       <div>
         <Modal
-          visible={this.props.registerVisible}
+          visible={registerVisible}
           onOk={this.handleOk}
           confirmLoading={confirmLoading}
           onCancel={this.handleCancel}
@@ -41,7 +48,7 @@ class Register extends Component {
               />
             </div>
             <div className="Register-Wrapper Register-Description">
-              <h2>Get Notify When the {this.props.register.coin} - {this.props.register.title} lottery Starts</h2>
+              <h2>Get Notify When the {coin} - {title} lottery Starts</h2>
               <p>We're working day and night to launch it. Support us and share to your friends! :)</p>
             </div>
             <div className="Register-Wrapper Register-CTA">
@@ -54,14 +61,14 @@ class Register extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    {setRegisterVisible: setRegisterVisible},
+    { setRegisterVisible },
     dispatch
   );
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
     registerVisible: state.registerVisible,
     register: state.register

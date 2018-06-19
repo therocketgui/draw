@@ -1,28 +1,32 @@
-import React, { Component } from 'react';
-import { Row, Card } from 'antd';
+import React from 'react';
+import { Card, Row } from 'antd';
 
-class CardHow extends Component {
-  render(){
-    return (
-      <Row type="flex" justify="space-around" align="middle">
-        <div
-          className={"how-card-bg " + this.props.className}
-          style={{backgroundImage: `url(/src/images/${this.props.background})`}}
+
+function CardHow({
+  background,
+  className,
+  description,
+  title,
+}) {
+  return (
+    <Row type="flex" justify="space-around" align="middle">
+      <div
+        className={`how-card-bg ${className}`}
+        style={{ backgroundImage: `url(/src/images/${background})` }}
+      >
+        <Card
+          className={`card how-card ${className}`}
         >
-          <Card
-            className={"card how-card " + this.props.className}
-          >
-            <p className="card-title">
-              {this.props.title}
-            </p>
-            <p className="card-sub">
-              {this.props.description}
-            </p>
-          </Card>
-        </div>
-      </Row>
-    );
-  }
+          <p className="card-title">
+            {title}
+          </p>
+          <p className="card-sub">
+            {description}
+          </p>
+        </Card>
+      </div>
+    </Row>
+  );
 }
 
 export default CardHow;
