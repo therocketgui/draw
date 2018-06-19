@@ -36,7 +36,7 @@ class Register extends Component {
               <Avatar
                 size="large"
                 className="avatar avatar-circle circle mb-30 avatar-reg"
-                src={`http://localhost:8080/src/images/${this.props.register.logo}`}
+                src={`/src/images/${this.props.register.logo}`}
                 style={{backgroundColor: '#F7F7F7'}}
               />
             </div>

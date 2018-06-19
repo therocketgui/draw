@@ -8,6 +8,7 @@ class CardHow extends Component {
           <Card
             className={`card gain-card ${this.props.className}`}
           >
+            <img src={`src/images/${this.props.icon}`} />
             <p className="card-title">
               {this.props.title}
             </p>

@@ -16,7 +16,7 @@ class CardDraw extends Component {
           <Row type="flex" justify="space-around" align="middle">
             <Card
               style={{ width: 300 }}
-              cover={<img alt="example" src={`http://localhost:8080/src/images/${this.props.data.background}`} />}
+              cover={<img alt="example" src={`/src/images/${this.props.data.background}`} />}
               className="card draw-card mb-30"
               hoverable={false}
             >
@@ -24,7 +24,7 @@ class CardDraw extends Component {
                 <Avatar
                   size="large"
                   className="avatar avatar-circle circle mb-30"
-                  src={`http://localhost:8080/src/images/${this.props.data.logo}`}
+                  src={`/src/images/${this.props.data.logo}`}
                   style={{backgroundColor: '#F7F7F7'}}
                 />
                 <p className="mb-10 card-title">

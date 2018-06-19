@@ -6,6 +6,7 @@ import CardTeam from './../../components/Cards/CardTeam';
 import CardHow from './../../components/Cards/CardHow';
 import CardGain from './../../components/Cards/CardGain';
 import FormMain from './../../components/Forms/FormMain';
+import Footer from './../../components/Footer';
 import Register from './../../containers/Common/Register';
 
 import Rocket from 'react-svg-loader!./../../images/rocket.svg';
@@ -139,13 +140,14 @@ class Home extends Component {
         <div className="Container-bg-grey">
           <div className="Container Gain">
             <Row type="flex" justify="space-around" align="middle">
-              <h2>Lottery Gains</h2>
+              <h2>Gain Repartition</h2>
             </Row>
             <Row>
               <CardGain
                 title="99%"
                 description="For the winner!"
                 className="gain-card-top"
+                icon="winner.svg"
               />
             </Row>
             <Row type="flex" justify="space-around" align="middle">
@@ -159,6 +161,7 @@ class Home extends Component {
                   title="0.5%"
                   description="To Charity"
                   className="gain-card-bot"
+                  icon="charity.svg"
                 />
               </Col>
               <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 12 }} xl={{ span: 12 }}>
@@ -166,6 +169,7 @@ class Home extends Component {
                   title="0.5%"
                   description="To our Team"
                   className="gain-card-bot"
+                  icon="team.svg"
                 />
               </Col>
             </Row>
@@ -200,9 +204,7 @@ class Home extends Component {
 
         <div className="Container-bg-grey">
           <div className="Container">
-            <Row>
-              Footer
-            </Row>
+            <Footer />
           </div>
         </div>
       </div>
