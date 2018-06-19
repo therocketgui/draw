@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Button, Input, notification } from 'antd';
 
-const { FormItem } = Form;
+const FormItem = Form.Item;
 
 function triggerNotification () {
   notification.open({
