@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import {Row, Col, Input, Button, Card, Icon, Avatar} from 'antd';
+import { Col, Row } from 'antd';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import Rocket from 'react-svg-loader!./../../images/rocket.svg';
+
 import MenuMain from './../../components/Menus/MenuMain';
 import CardDraw from './../../components/Cards/CardDraw';
 import CardTeam from './../../components/Cards/CardTeam';
@@ -8,35 +13,42 @@ import CardGain from './../../components/Cards/CardGain';
 import FormMain from './../../components/Forms/FormMain';
 import Register from './../../containers/Common/Register';
 
-import Rocket from 'react-svg-loader!./../../images/rocket.svg';
-
-// import { draws } from './../../data/data.js';
-
-import { bindActionCreators } from 'redux';
 import { setDraws, setRegister, setRegisterVisible } from './../../actions';
-import { connect } from 'react-redux';
+
 
 class Home extends Component {
   componentWillMount() {
     this.props.setDraws();
   }
+
   renderRegister = (draw) => {
     this.props.setRegisterVisible(true);
     this.props.setRegister(draw);
-  }
+  };
+
   render() {
+    const { register, draws } = this.props;
+
     return (
       <div>
         <div className="Header">
           <Row>
             <div className="MenuMain-Container">
               <MenuMain />
-              <Register data={this.props.register} />
+              <Register data={register} />
             </div>
           </Row>
           <Row type="flex" justify="space-around" align="middle">
-            <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 12 }} xl={{ span: 12 }}>
-              <h1>A Truly Decentralized “Winner Takes All” Open Source Lottery - Powered by Ethereum</h1>
+            <Col
+              xs={{ span: 24 }}
+              sm={{ span: 24 }}
+              md={{ span: 24 }}
+              lg={{ span: 12 }}
+              xl={{ span: 12 }}
+            >
+              <h1>
+                A Truly Decentralized “Winner Takes All” Open Source Lottery - Powered by Ethereum
+              </h1>
               <div className="header-cta-wrapper">
                 <FormMain />
               </div>
@@ -52,14 +64,13 @@ class Home extends Component {
         <div className="Cards-bg">
           <div className="Container Cards">
             <Row gutter={8}>
-              {this.props.draws.map((draw) =>
-                  <CardDraw
-                    key={draw.id}
-                    data={draw}
-                    renderRegister={this.renderRegister}
-                  />
-                )
-              }
+              {draws.map(draw => (
+                <CardDraw
+                  key={draw.id}
+                  data={draw}
+                  renderRegister={this.renderRegister}
+                />
+              ))}
             </Row>
           </div>
         </div>
@@ -71,7 +82,13 @@ class Home extends Component {
             </Row>
 
             <Row type="flex" justify="space-around" align="middle">
-              <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 8 }} xl={{ span: 8 }}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 8 }}
+                xl={{ span: 8 }}
+              >
                 <CardHow
                   className="left"
                   title="1. The contribution starts at specific bloc number"
@@ -92,7 +109,13 @@ class Home extends Component {
                 <div className="how-bullet no-display" />
                 <div className="how-line no-display" />
               </Col>
-              <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 8 }} xl={{ span: 8 }}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 8 }}
+                xl={{ span: 8 }}
+              >
                 <CardHow
                   className="right"
                   title="2. Your Ethereum Address is your ticket"
@@ -103,7 +126,13 @@ class Home extends Component {
             </Row>
 
             <Row type="flex" justify="space-around" align="middle">
-              <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 8 }} xl={{ span: 8 }}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 8 }}
+                xl={{ span: 8 }}
+              >
                 <CardHow
                   className="left"
                   title="3. The winner is determined by drawing lots"
@@ -123,7 +152,13 @@ class Home extends Component {
               <Col className="how-line-wrapper no-t" span={4}>
                 <div className="how-bullet no-display" />
               </Col>
-              <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 8 }} xl={{ span: 8 }}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 8 }}
+                xl={{ span: 8 }}
+              >
                 <CardHow
                   className="right"
                   title="4. CASH OUT!"
@@ -149,19 +184,37 @@ class Home extends Component {
               />
             </Row>
             <Row type="flex" justify="space-around" align="middle">
-              <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 12 }} xl={{ span: 12 }}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 12 }}
+                xl={{ span: 12 }}
+              >
                 <div className="gain-bg no-display" />
               </Col>
             </Row>
             <Row>
-              <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 12 }} xl={{ span: 12 }}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 12 }}
+                xl={{ span: 12 }}
+              >
                 <CardGain
                   title="0.5%"
                   description="To Charity"
                   className="gain-card-bot"
                 />
               </Col>
-              <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 12 }} xl={{ span: 12 }}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 24 }}
+                lg={{ span: 12 }}
+                xl={{ span: 12 }}
+              >
                 <CardGain
                   title="0.5%"
                   description="To our Team"
@@ -178,20 +231,32 @@ class Home extends Component {
               <h2>Meet the Team</h2>
             </Row>
             <Row type="flex" justify="space-around" align="middle">
-              <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 12 }}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 12 }}
+                lg={{ span: 12 }}
+                xl={{ span: 12 }}
+              >
                 <CardTeam
-                  image={'guillaume.png'}
-                  name={'GD'}
-                  title={'Crypto Nerd'}
-                  description={'Growth Engineer, Product Designer and Front-end Developper. Hacker & Painter.'}
+                  image="guillaume.png"
+                  name="GD"
+                  title="Crypto Nerd"
+                  description="Growth Engineer, Product Designer and Front-end Developper. Hacker & Painter."
                 />
               </Col>
-              <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 12 }}>
+              <Col
+                xs={{ span: 24 }}
+                sm={{ span: 24 }}
+                md={{ span: 12 }}
+                lg={{ span: 12 }}
+                xl={{ span: 12 }}
+              >
                 <CardTeam
-                  image={'manu.png'}
-                  name={'MV'}
-                  title={'Crypto Nerd'}
-                  description={'Systems Engineer, Back-end Engineer & Ethereum Developper. Polytechnique & Telecom Paris.'}
+                  image="manu.png"
+                  name="MV"
+                  title="Crypto Nerd"
+                  description="Systems Engineer, Back-end Engineer & Ethereum Developper. Polytechnique & Telecom Paris."
                 />
               </Col>
             </Row>
@@ -210,16 +275,15 @@ class Home extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators(
-    {setDraws: setDraws,
-     setRegister: setRegister,
-     setRegisterVisible: setRegisterVisible},
-    dispatch
-  );
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    setDraws,
+    setRegister,
+    setRegisterVisible,
+  }, dispatch);
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
     draws: state.draws,
     register: state.register,

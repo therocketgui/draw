@@ -1,4 +1,4 @@
-import draws from './../data/data.js';
+import draws from './../data/data';
 
 export const SET_DRAWS = 'SET_DRAWS';
 export const FETCH_DRAW = 'FETCH_DRAW';
