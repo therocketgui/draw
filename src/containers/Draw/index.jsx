@@ -11,8 +11,10 @@ import Register from './../../containers/Common/Register';
 
 class Draw extends Component {
   componentDidMount() {
-    if (!this.props.draw) {
-      this.props.fetchDraw(this.props.match.params.id);
+    const { draw, match } = this.props;
+    if (!draw) {
+      // match.params.id is a string although our ids are numbers
+      this.props.fetchDraw(parseInt(match.params.id, 10));
     }
   }
 
@@ -28,16 +30,18 @@ class Draw extends Component {
 
     const {
       register,
-      draw: {
-        background,
-        coin,
-        description,
-        end,
-        logo,
-        start,
-        title,
-      },
+      draw,
     } = this.props;
+
+    const {
+      background,
+      coin,
+      description,
+      end,
+      logo,
+      start,
+      title,
+    } = draw;
 
     return (
       <div>
@@ -119,7 +123,8 @@ class Draw extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  const idFromUrl = ownProps.match.params.id;
+  // match.params.id is a string although our ids are numbers
+  const idFromUrl = parseInt(ownProps.match.params.id, 10);
   const draw = state.draws.find(p => p.id === idFromUrl);
   return {
     draw,
