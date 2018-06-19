@@ -43,13 +43,16 @@ class Register extends Component {
               <Avatar
                 size="large"
                 className="avatar avatar-circle circle mb-30 avatar-reg"
-                src={`/src/images/${this.props.register.logo}`}
-                style={{backgroundColor: '#F7F7F7'}}
+                src={`/src/images/${logo}`}
+                style={{ backgroundColor: '#F7F7F7' }}
               />
             </div>
             <div className="Register-Wrapper Register-Description">
               <h2>Get Notify When the {coin} - {title} lottery Starts</h2>
-              <p>We're working day and night to launch it. Support us and share to your friends! :)</p>
+              <p>
+                We‘re working day and night to launch it.
+                Support us and share to your friends! :)
+              </p>
             </div>
             <div className="Register-Wrapper Register-CTA">
               <FormMain handleOk={this.handleOk} />
