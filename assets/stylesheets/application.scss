@@ -7,8 +7,9 @@
 @import "containers";
 @import "basics";
 
-$primary-color: #F9BF3B;
-$secondary-color: #F9BF3B;
+$primary-color: #674172;
+$secondary-color: #FFFFFF; // not defined
+
 $light-grey: #FAFAFA;
 $dark-grey: #BDC3C7;
 
@@ -102,6 +103,12 @@ $dark-grey: #BDC3C7;
 .Container-bg-grey {
   background-color: #fafafa;
 }
+.Container-bg-primary {
+  background-color: $primary-color;
+  color: white;
+}
+
+
 .Cards-bg {
   background: url('/src/images/header-wave.svg');
   background-repeat: no-repeat;
@@ -157,7 +164,7 @@ h2 {
     height: 300px!important;
     margin-left:auto;
     margin-right:auto;
-    background-color: #7c7c7c;
+    background-color: $primary-color;
   }
   .how-bullet {
     display: block;
@@ -166,7 +173,7 @@ h2 {
     margin-right: auto;
     margin-left: auto;
     border-radius: 150px;
-    background-color: #7c7c7c;
+    background-color: $primary-color;
   }
 }
 
@@ -331,6 +338,7 @@ h2 {
 }
 
 .Footer {
+  font-color: white;
   text-align: center;
   div {
     margin-top:10px;

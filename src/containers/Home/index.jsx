@@ -270,7 +270,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="Container-bg-grey">
+        <div className="Container-bg-primary">
           <div className="Container">
             <Footer />
           </div>

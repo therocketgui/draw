@@ -1,5 +1,6 @@
-$primary-color: #F9BF3B;
-$secondary-color: #F9BF3B;
+$primary-color: #674172;
+$secondary-color: #FFFFFF; // not defined
+
 $light-grey: #FAFAFA;
 $dark-grey: #BDC3C7;
 
@@ -32,6 +33,12 @@ $dark-grey: #BDC3C7;
   font-family: "Avenir Next LT W01 Demi";
   padding: 12px 20px;
 }
+
+.ant-btn:hover{
+  border-color: $primary-color;
+  color: $primary-color;
+}
+
 .side-bar button, .side-bar .ant-btn {
   width: 100%;
   display: block;

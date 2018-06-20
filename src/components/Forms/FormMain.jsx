@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button, Input, notification } from 'antd';
+import { postEmail } from './../../actions';
 
 const FormItem = Form.Item;
 
@@ -17,6 +18,7 @@ class FormMain extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        postEmail({ email: values.email });
         if (this.props.handleOk) {
           this.props.handleOk();
         }

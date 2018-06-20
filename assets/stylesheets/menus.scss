@@ -1,7 +1,13 @@
-$primary-color: #F9BF3B;
-$secondary-color: #F9BF3B;
+$primary-color: #674172;
+$secondary-color: #FFFFFF; // not defined
+
 $light-grey: #FAFAFA;
 $dark-grey: #BDC3C7;
+
+a { color: inherit; }
+a, a:hover {
+  color: $primary-color;
+}
 
 .MenuMain-Container {
   padding-top: 20px;
@@ -10,4 +16,9 @@ $dark-grey: #BDC3C7;
 
 .ant-menu-horizontal {
   border-bottom: 0px!important;
+}
+
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected {
+  border-color: $primary-color;
+  color: $primary-color;
 }
