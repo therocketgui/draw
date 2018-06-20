@@ -7,7 +7,7 @@ function CardHow({ className, description, title, icon }) {
       <Card
         className={`card gain-card ${className}`}
       >
-        <img src={`src/images/${icon}`} />
+        <img src={`/src/images/${icon}`} />
         <p className="card-title">
           {title}
         </p>

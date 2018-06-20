@@ -16,7 +16,7 @@ function CardDraw({ renderRegister, data }) {
       <Row type="flex" justify="space-around" align="middle">
         <Card
           style={{ width: 300 }}
-          cover={<img alt="example" src={`http://localhost:8080/src/images/${background}`} />}
+          cover={<img alt="example" src={`/src/images/${background}`} />}
           className="card draw-card mb-30"
           hoverable={false}
         >
