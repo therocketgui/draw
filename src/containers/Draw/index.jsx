@@ -7,6 +7,7 @@ import { fetchDraw, setRegister, setRegisterVisible } from './../../actions';
 
 import MenuMain from './../../components/Menus/MenuMain';
 import Register from './../../containers/Common/Register';
+import Footer from './../../components/Footer';
 
 
 class Draw extends Component {
@@ -37,6 +38,8 @@ class Draw extends Component {
       background,
       coin,
       description,
+      bet,
+      symbol,
       end,
       logo,
       start,
@@ -55,13 +58,15 @@ class Draw extends Component {
           className="Draw-Header"
           style={{ backgroundImage: `url(/src/images/${background}` }}
         >
-          <div className="logo display">
-            <Avatar
-              size="large"
-              className="avatar rounded mb-15"
-              src={`/src/images/${logo}`}
-              style={{ backgroundColor: "#F7F7F7" }}
-            />
+          <div className="logo-mobile display">
+            <Row type="flex" justify="space-between" align="center">
+              <Avatar
+                size="large"
+                className="avatar avatar-circle rounded mb-15"
+                src={`/src/images/${logo}`}
+                style={{ backgroundColor: "#F7F7F7" }}
+              />
+            </Row>
           </div>
           <Row type="flex" justify="space-between" align="bottom">
             <Col
@@ -80,6 +85,15 @@ class Draw extends Component {
             >
               <div className="title">
                 <h1>{coin} - {title}</h1>
+                <div className="cta-mobile display">
+                  <Button
+                    className="btn-rounded"
+                    size="large"
+                    onClick={this.renderRegister}
+                  >
+                    Join Draw
+                  </Button>
+                </div>
               </div>
             </Col>
           </Row>
@@ -103,7 +117,7 @@ class Draw extends Component {
                 xl={{ span: 6 }}
               >
                 <div className="center-text">
-                  <p>
+                  <p className="reading--regular">
                     Pot Size: <span>17,837</span> EOS (1,230,000$)
                   </p>
                 </div>
@@ -116,7 +130,7 @@ class Draw extends Component {
                 xl={{ span: 6 }}
               >
                 <div className="center-text">
-                  <p>
+                  <p className="reading--regular">
                     Participants: <span>2,345</span>
                   </p>
                 </div>
@@ -129,7 +143,7 @@ class Draw extends Component {
                 xl={{ span: 6 }}
               >
                 <div className="center-text">
-                  <p>
+                  <p className="reading--regular">
                     Ends in approx. <span>5 days, 23 hours</span>
                   </p>
                 </div>
@@ -154,20 +168,20 @@ class Draw extends Component {
                       style={{ backgroundColor: "#F7F7F7" }}
                     />
                   </div>
-                  <div className="Draw-Card infos">
+                  <div className="Draw-Card infos card">
                     <div>
                       <h3>Infos</h3>
-                      <p>Starts on block {start}</p>
-                      <p>Ends on block {end}</p>
-                      <p>Duration Estimation: 12 days</p>
+                      <p className="reading--regular">Starts on block {start}</p>
+                      <p className="reading--regular">Ends on block {end}</p>
+                      <p className="reading--regular">Duration Estimation: 12 days</p>
                     </div>
-                    <div className="cta">
+                    <div className="cta no-display">
                       <Button
                         className="btn-rounded"
                         size="large"
                         onClick={this.renderRegister}
                       >
-                        Join Draw
+                        Bet {bet} {symbol}
                       </Button>
                     </div>
                   </div>
@@ -182,13 +196,18 @@ class Draw extends Component {
               >
                 <div className="Draw-Bloc Draw-Card description">
                   <div>
-                    <p>
+                    <p className="reading--large">
                       {description}
                     </p>
                   </div>
                 </div>
               </Col>
             </Row>
+          </div>
+        </div>
+        <div className="Container-bg-grey">
+          <div className="Container">
+            <Footer />
           </div>
         </div>
       </div>

@@ -14,12 +14,12 @@ function triggerNotification () {
 class FormMain extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.props.handleOk) {
-      this.props.handleOk();
-    }
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        if (this.props.handleOk) {
+          this.props.handleOk();
+        }
         e.target.reset();
         triggerNotification();
       }

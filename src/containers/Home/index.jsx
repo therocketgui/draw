@@ -12,6 +12,7 @@ import CardHow from './../../components/Cards/CardHow';
 import CardGain from './../../components/Cards/CardGain';
 import FormMain from './../../components/Forms/FormMain';
 import Footer from './../../components/Footer';
+import SubCta from './../../components/Buttons/SubCta';
 import Register from './../../containers/Common/Register';
 
 import { setDraws, setRegister, setRegisterVisible } from './../../actions';
@@ -168,7 +169,7 @@ class Home extends Component {
                 />
               </Col>
             </Row>
-
+            <SubCta />
           </div>
         </div>
 
@@ -226,6 +227,7 @@ class Home extends Component {
                 />
               </Col>
             </Row>
+            <SubCta />
           </div>
         </div>
 
@@ -264,6 +266,7 @@ class Home extends Component {
                 />
               </Col>
             </Row>
+            <SubCta />
           </div>
         </div>
 

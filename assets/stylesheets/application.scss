@@ -5,6 +5,13 @@
 @import "inputs";
 @import "menus";
 @import "containers";
+@import "basics";
+
+$primary-color: #F9BF3B;
+$secondary-color: #F9BF3B;
+$light-grey: #FAFAFA;
+$dark-grey: #BDC3C7;
+
 
 @media only screen and (max-width: 1000px) {
   .no-display {
@@ -26,6 +33,9 @@
       bottom: 0!important;
       margin-bottom: 20px;
     }
+  }
+  .Footer {
+    margin-top: 15px;
   }
   .Header {
     h1 {
@@ -52,9 +62,40 @@
     .Logo-Bloc {
       margin-top: 0px!important;
     }
+    .Draw-Main-Sub {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
   .Draw-Main-Sub {
     height:auto!important;
     }
+  }
+  .Draw-Card, .Draw-Bloc {
+    margin-right: 0px!important;
+  }
+  .Draw-Header {
+    height: 425px!important;
+    .title {
+      text-align: center!important;
+    }
+    h1 {
+      font-size: 24px!important;
+      top: 250px!important;
+      width: 100%;
+    }
+    .cta-mobile {
+      position: relative!important;
+      top: 300px!important;
+    }
+  }
+  .How .Sub-Cta {
+    margin-top: 40px!important;
+  }
+  .Gain .Sub-Cta {
+    margin-top: 40px;
+  }
+  .Team .Sub-Cta {
+    margin-top: 40px;
   }
 }
 
@@ -102,7 +143,7 @@ h2 {
   h2 {
     margin-bottom: 0px!important;
   }
-  padding-bottom: 200px;
+  padding-bottom: 100px;
   .no-t {
     top: 0!important;
   }
@@ -166,16 +207,26 @@ h2 {
   height: 375px;
   padding-left: 10%;
   padding-right: 10%;
-  .title{
+  .title {
     position: relative;
     height:100%!important;
     width:100%;
     padding-left: 20px;
   }
-  h1{
+  .logo-mobile {
+    position: relative;
+    width: 100%;
+    // left: -50%;
+    .avatar {
+      position: absolute;
+      left: 35%;
+      top: 100px;
+    }
+  }
+  h1 {
     font-size: 40px;
     font-weight: 800;
-    position:absolute;
+    position: absolute;
     top: 315px;
   }
 }
@@ -205,9 +256,12 @@ h2 {
     }
   }
   .Draw-Card {
-    border: 1px solid #eeeeee;
     // border-radius: 7px;
     padding: 20px;
+    margin-bottom: 5px;
+  }
+  .infos {
+    border: 1px solid #eeeeee;
   }
   .Draw-Blocs {
     padding-left: 10%;
@@ -222,7 +276,7 @@ h2 {
   }
   .description {
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 80px;
     padding-top: 20px;
 
     min-height: 500px;
@@ -282,3 +336,15 @@ h2 {
     margin-top:10px;
   }
 }
+
+.How .Sub-Cta {
+  margin-top: 100px;
+}
+
+.Team .Sub-Cta {
+  margin-top: 40px;
+}
+
+// .How .Sub-Cta {
+//   margin-top: 40px;
+// }
