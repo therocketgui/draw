@@ -56,7 +56,7 @@ class Draw extends Component {
         </div>
         <div
           className="Draw-Header"
-          style={{ backgroundImage: `url(/src/images/${background}` }}
+          style={{ backgroundImage: `url(/src/images/${background})` }}
         >
           <div className="logo-mobile display">
             <Row type="flex" justify="space-between" align="center">
