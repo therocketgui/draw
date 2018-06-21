@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { setRegisterVisible } from './../../../actions';
 import FormMain from './../../../components/Forms/FormMain';
 
+import dataLayer from './../../../analytics/DataLayer';
 
 class Register extends Component {
   state = {
@@ -18,6 +19,10 @@ class Register extends Component {
 
   handleOk = () => {
     this.props.setRegisterVisible(false);
+  };
+
+  analytics = (name) => {
+    dataLayer(name);
   };
 
   render() {
@@ -55,7 +60,10 @@ class Register extends Component {
               </p>
             </div>
             <div className="Register-Wrapper Register-CTA">
-              <FormMain handleOk={this.handleOk} />
+              <FormMain
+                handleOk={this.handleOk}
+                analytics={this.analytics}
+              />
             </div>
           </div>
         </Modal>

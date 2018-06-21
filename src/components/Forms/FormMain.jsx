@@ -19,6 +19,7 @@ class FormMain extends Component {
       if (!err) {
         console.log('Received values of form: ', values);
         postEmail({ email: values.email });
+        this.props.analytics('FormDraw_submit');
         if (this.props.handleOk) {
           this.props.handleOk();
         }

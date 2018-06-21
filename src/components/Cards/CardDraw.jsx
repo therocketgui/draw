@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, Button, Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 
-function CardDraw({ renderRegister, data }) {
+function CardDraw({ analytics, renderRegister, data }) {
   const {
     id,
     background,
@@ -11,6 +11,7 @@ function CardDraw({ renderRegister, data }) {
     start,
     title,
   } = data;
+
   return (
     <Col className="pl-10 pr-10" xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 6 }} xl={{ span: 6 }}>
       <Row type="flex" justify="space-around" align="middle">
@@ -19,8 +20,12 @@ function CardDraw({ renderRegister, data }) {
           cover={<img alt="example" src={`/src/images/${background}`} />}
           className="card draw-card mb-30"
           hoverable={false}
+          onClick={() => analytics('CardDraw_click')}
         >
-          <Link href={`/draw/${id}`} to={`/draw/${id}`}>
+          <Link
+            href={`/draw/${id}`}
+            to={`/draw/${id}`}
+          >
             <Avatar
               size="large"
               className="avatar avatar-circle circle mb-30"

@@ -15,6 +15,8 @@ import Footer from './../../components/Footer';
 import SubCta from './../../components/Buttons/SubCta';
 import Register from './../../containers/Common/Register';
 
+import dataLayer from './../../analytics/DataLayer';
+
 import { setDraws, setRegister, setRegisterVisible } from './../../actions';
 
 
@@ -23,11 +25,14 @@ class Home extends Component {
     this.props.setDraws();
   }
 
+  analytics = (name) => {
+    dataLayer(name);
+  }
+
   renderRegister = (draw) => {
     this.props.setRegisterVisible(true);
     this.props.setRegister(draw);
   };
-
   render() {
     const { register, draws } = this.props;
 
@@ -52,7 +57,7 @@ class Home extends Component {
                 A Truly Decentralized “Winner Takes All” Open Source Lottery - Powered by Ethereum
               </h1>
               <div className="header-cta-wrapper">
-                <FormMain />
+                <FormMain analytics={this.analytics} />
               </div>
             </Col>
             <Col span={12}>
@@ -71,6 +76,7 @@ class Home extends Component {
                   key={draw.id}
                   data={draw}
                   renderRegister={this.renderRegister}
+                  analytics={this.analytics}
                 />
               ))}
             </Row>
