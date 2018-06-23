@@ -1,15 +1,18 @@
 import React from 'react';
 import { Avatar, Button, Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
+import NumberFormat from 'react-number-format';
 
 function CardDraw({ analytics, renderRegister, data }) {
   const {
     id,
     background,
     coin,
+    symbol,
     logo,
     start,
     title,
+    bet,
   } = data;
 
   return (
@@ -48,7 +51,7 @@ function CardDraw({ analytics, renderRegister, data }) {
               size="large"
               onClick={() => renderRegister(data)}
             >
-              Join Draw
+              BET <NumberFormat thousandSeparator value={bet} displayType="text" /> {symbol}
             </Button>
           </Row>
         </Card>
