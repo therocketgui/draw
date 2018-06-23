@@ -10,7 +10,7 @@ const draws = [
     bet: 5,
     entries: 0,
     logo: "eos.png",
-    background: "draw-bg.png"
+    background: "eos-bg.png"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const draws = [
     bet: 25000,
     entries: 0,
     logo: "trx.png",
-    background: "draw-bg.png"
+    background: "trx-bg.png"
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const draws = [
     bet: 2,
     entries: 0,
     logo: "icx.png",
-    background: "draw-bg.png"
+    background: "icx-bg.png"
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const draws = [
     bet: 4000,
     entries: 0,
     logo: "bat.png",
-    background: "draw-bg.png"
+    background: "bat-bg.png"
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ const draws = [
     bet: 3,
     entries: 0,
     logo: "bnb.png",
-    background: "draw-bg.png"
+    background: "bnb-bg.png"
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ const draws = [
     bet: 67,
     entries: 0,
     logo: "fun.png",
-    background: "draw-bg.png"
+    background: "fun-bg.png"
   }
 ];
 

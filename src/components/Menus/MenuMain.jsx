@@ -21,6 +21,7 @@ class MenuMain extends Component {
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
           mode="horizontal"
+          className={this.props.className}
         >
           <Menu.Item key="home">
             <Link href="/" to="/">Home</Link>

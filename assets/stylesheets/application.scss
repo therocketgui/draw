@@ -211,6 +211,8 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
+  // opacity: 0.5;
+  // filter: alpha(opacity=50); /* For IE8 and earlier */
   height: 375px;
   padding-left: 10%;
   padding-right: 10%;
@@ -235,6 +237,7 @@ h2 {
     font-weight: 800;
     position: absolute;
     top: 315px;
+    color:white;
   }
 }
 
@@ -356,3 +359,7 @@ h2 {
 // .How .Sub-Cta {
 //   margin-top: 40px;
 // }
+
+.white a, .white li {
+  color:white!important;
+}

@@ -50,7 +50,7 @@ class Draw extends Component {
       <div>
         <div className="Header">
           <div className="MenuMain-Container">
-            <MenuMain />
+            <MenuMain className="white" />
             <Register data={register} />
           </div>
         </div>
