@@ -5,12 +5,13 @@ const draws = [
     coin: "EOS",
     symbol: "EOS",
     title: "Classic Edition",
-    description: "",
+    description: "The Classic Edition is our mainstream lottery.",
     status: "upcoming",
     bet: 5,
     entries: 0,
     logo: "eos.png",
-    background: "eos-bg.png"
+    background: "eos-bg.png",
+    url: "eos-classic-edition"
   },
   {
     id: 2,
@@ -18,12 +19,13 @@ const draws = [
     coin: "Tronix",
     symbol: "TRX",
     title: "Whale Edition",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolormque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consecteturd.<br /><br />0.5% of the pot will go to Charity X. Check their website here: www.charityX.com.<br /><br />Warnings: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.<br /><br />Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    description: "The Whale Edition is destined at anyone who has a huge amount of a token and want to multiply it.",
     status: "upcoming",
     bet: 25000,
     entries: 0,
     logo: "trx.png",
-    background: "trx-bg.png"
+    background: "trx-bg.png",
+    url: "tronix-whale-edition"
   },
   {
     id: 3,
@@ -31,12 +33,13 @@ const draws = [
     coin: "ICON",
     symbol: "ICX",
     title: "Just For Fun Edition",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolormque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consecteturd.<br /><br />0.5% of the pot will go to Charity X. Check their website here: www.charityX.com.<br /><br />Warnings: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.<br /><br />Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    description: "The Just For Fun Edition is for anyone who wants to bet a few quids, have fun and get a chance to win a massive amount.",
     status: "upcoming",
     bet: 2,
     entries: 0,
     logo: "icx.png",
-    background: "icx-bg.png"
+    background: "icx-bg.png",
+    url: "icon-just-for-fun-edition"
   },
   {
     id: 4,
@@ -44,12 +47,13 @@ const draws = [
     coin: "Basic Attention Token",
     symbol: "BAT",
     title: "Whale Edition",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolormque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consecteturd.<br /><br />0.5% of the pot will go to Charity X. Check their website here: www.charityX.com.<br /><br />Warnings: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.<br /><br />Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    description: "The Whale Edition is destined at anyone who has a huge amount of a token and want to multiply it.",
     status: "upcoming",
     bet: 4000,
     entries: 0,
     logo: "bat.png",
-    background: "bat-bg.png"
+    background: "bat-bg.png",
+    url: "basic-attention-token-whale-edition"
   },
   {
     id: 5,
@@ -57,12 +61,13 @@ const draws = [
     coin: "BNB",
     symbol: "BNB",
     title: "Classic Edition",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolormque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consecteturd.<br /><br />0.5% of the pot will go to Charity X. Check their website here: www.charityX.com.<br /><br />Warnings: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.<br /><br />Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    description: "The Classic Edition is our mainstream lottery.",
     status: "upcoming",
     bet: 3,
     entries: 0,
     logo: "bnb.png",
-    background: "bnb-bg.png"
+    background: "bnb-bg.png",
+    url: "binance-coin-classic-edition"
   },
   {
     id: 6,
@@ -70,12 +75,13 @@ const draws = [
     coin: "FunFair",
     symbol: "FUN",
     title: "Just For Fun Edition",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolormque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consecteturd.<br /><br />0.5% of the pot will go to Charity X. Check their website here: www.charityX.com.<br /><br />Warnings: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.<br /><br />Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    description: "The Just For Fun Edition is for anyone who wants to bet a few quids, have fun and get a chance to win a massive amount.",
     status: "upcoming",
     bet: 67,
     entries: 0,
     logo: "fun.png",
-    background: "fun-bg.png"
+    background: "fun-bg.png",
+    url: "funfair-just-for-fun-edition"
   }
 ];
 

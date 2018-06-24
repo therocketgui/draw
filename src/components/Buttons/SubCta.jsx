@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Button } from 'antd';
+import Scrollchor from 'react-scrollchor';
 
 function SubCta() {
   return (
@@ -7,7 +8,7 @@ function SubCta() {
       <Button
         className="Sub-Cta"
       >
-        Join Our Pre-Launch List
+        <Scrollchor to="#register" className="nav-link">Join Our Pre-Launch List</Scrollchor>
       </Button>
     </Row>
   );

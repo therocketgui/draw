@@ -89,6 +89,9 @@ $dark-grey: #BDC3C7;
       top: 300px!important;
     }
   }
+  .description {
+    padding-right:20px!important;
+  }
   .How .Sub-Cta {
     margin-top: 40px!important;
   }
@@ -104,7 +107,7 @@ $dark-grey: #BDC3C7;
   background-color: #fafafa;
 }
 .Container-bg-primary {
-  background-color: $primary-color;
+  background-color: #fafafa;
   color: white;
 }
 
@@ -233,6 +236,7 @@ h2 {
     }
   }
   h1 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
     font-size: 40px;
     font-weight: 800;
     position: absolute;
@@ -341,7 +345,7 @@ h2 {
 }
 
 .Footer {
-  font-color: white;
+  color: black;
   text-align: center;
   div {
     margin-top:10px;
@@ -362,4 +366,12 @@ h2 {
 
 .white a, .white li {
   color:white!important;
+}
+
+.logo {
+  width: 100%;
+  svg {
+    width:50%!important;
+    height:100%!important;
+  }
 }

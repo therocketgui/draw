@@ -10,9 +10,9 @@ function CardDraw({ analytics, renderRegister, data }) {
     coin,
     symbol,
     logo,
-    start,
     title,
     bet,
+    url,
   } = data;
 
   return (
@@ -26,8 +26,8 @@ function CardDraw({ analytics, renderRegister, data }) {
           onClick={() => analytics('CardDraw_click')}
         >
           <Link
-            href={`/draw/${id}`}
-            to={`/draw/${id}`}
+            href={`/draw/${id}/${url}`}
+            to={`/draw/${id}/${url}`}
           >
             <Avatar
               size="large"
@@ -42,7 +42,7 @@ function CardDraw({ analytics, renderRegister, data }) {
               {title}
             </p>
             <p className="mb-10 card-count">
-              Start at block {start}
+              Max Bet: <NumberFormat thousandSeparator value={bet} displayType="text" />
             </p>
           </Link>
           <Row className="btn-card-wrapper" type="flex" justify="space-around" align="middle">

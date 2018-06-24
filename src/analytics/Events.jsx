@@ -9,3 +9,9 @@ export const DrawFormSubmission: IEvent = {
                               eventAction: 'draw form submit',
                               eventLabel: 'submit'
                             };
+
+export const RegisterPopup: IEvent = {
+                              eventCategory: 'pre-acquisition',
+                              eventAction: 'call-to-action click',
+                              eventLabel: 'submit'
+                            };

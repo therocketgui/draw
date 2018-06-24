@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, Card, Row } from 'antd';
 
 
-function CardTeam({ description, name, title }) {
+function CardTeam({ description, name, title, image }) {
   return (
     <Row type="flex" justify="space-around" align="middle">
       <Card
@@ -14,9 +14,11 @@ function CardTeam({ description, name, title }) {
           size="large"
           className="avatar rounded mb-10"
           // src={`http://localhost:8080/src/images/${this.props.image}`}
-          style={{ backgroundColor: "#F7F7F7" }}
-        />
-        <p className="mb-10 card-title">
+          style={{ backgroundColor: "#674172" }}
+        >
+          {image}
+        </Avatar>
+        <p className="mb-10 mt-20 card-title">
           {name}
         </p>
         <p className="mb-10 card-sub">

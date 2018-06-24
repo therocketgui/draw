@@ -7,7 +7,7 @@ const FormItem = Form.Item;
 function triggerNotification () {
   notification.open({
     message: 'Welcome on board :)',
-    description: 'You\'ll be the first person notified when we launch and will enjoy special perks & lotteries. We\'re glad to have you as one of our first futur user!',
+    description: 'Thanks a lot for supporting us in our journey to build this decentralized product. You\'ll be the first person notified when we launch and will enjoy special perks & lotteries. We\'re glad to have you as one of our first futur user!',
   });
 }
 
@@ -18,7 +18,7 @@ class FormMain extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
-        postEmail({ email: values.email });
+        postEmail({ email: values.email, date: new Date().toISOString(), draw: window.location.href});
         this.props.analytics('FormDraw_submit');
         if (this.props.handleOk) {
           this.props.handleOk();
@@ -44,7 +44,7 @@ class FormMain extends Component {
               className="Main-Cta"
               htmlType="submit"
             >
-              Yes, I want to be notified!
+              Join Our Pre-Launch List!
             </Button>
           </FormItem>
         </Form>

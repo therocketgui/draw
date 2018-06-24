@@ -9,7 +9,7 @@ import { createHistory as history } from 'history';
 
 import Home from './containers/Home';
 import Draw from './containers/Draw';
-import ScrollToTop from './components/utils/ScrollToTop';
+import ScrollToTop from './components/Utils/ScrollToTop';
 
 import '../assets/stylesheets/application.scss';
 
@@ -41,7 +41,6 @@ const reducers = combineReducers({
 
 const middlewares = applyMiddleware(reduxPromise, logger);
 
-
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middlewares)}>
@@ -49,7 +48,7 @@ ReactDOM.render(
       <ScrollToTop>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/draw/:id" exact component={Draw} />
+          <Route path="/draw/:id/:url" exact component={Draw} />
         </Switch>
       </ScrollToTop>
     </Router>

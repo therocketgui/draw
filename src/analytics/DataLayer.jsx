@@ -1,4 +1,4 @@
-import { CardDrawClick, DrawFormSubmission } from './Events';
+import { CardDrawClick, DrawFormSubmission, RegisterPopup } from './Events';
 
 function dataLayer(name) {
   let event = [];
@@ -6,6 +6,8 @@ function dataLayer(name) {
     event = CardDrawClick;
   } else if (name === 'FormDraw_submit') {
     event = DrawFormSubmission;
+  } else if (name === 'Register_Popup') {
+    event = RegisterPopup;
   } else {
     event = {};
   }

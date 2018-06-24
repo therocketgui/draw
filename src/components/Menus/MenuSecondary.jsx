@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
-import Scrollchor from 'react-scrollchor';
 
 class MenuMain extends Component {
   state = {
@@ -25,15 +24,6 @@ class MenuMain extends Component {
         >
           <Menu.Item key="home">
             <Link href="/" to="/">Home</Link>
-          </Menu.Item>
-          <Menu.Item key="howitworks" className="no-display">
-            <Scrollchor to="#howitworks" className="nav-link">How it Works</Scrollchor>
-          </Menu.Item>
-          <Menu.Item key="gains" className="no-display">
-            <Scrollchor to="#gains" className="nav-link">Gains</Scrollchor>
-          </Menu.Item>
-          <Menu.Item key="meettheteam" className="no-display">
-            <Scrollchor to="#meettheteam" className="nav-link">Meet the Team</Scrollchor>
           </Menu.Item>
         </Menu>
       </div>

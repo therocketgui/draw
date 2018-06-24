@@ -9,6 +9,9 @@ function Footer() {
       <div>
         © company X
       </div>
+      <div>
+        Contact us: cryptolotto@gmail.com
+      </div>
     </div>
   );
 }

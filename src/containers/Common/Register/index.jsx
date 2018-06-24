@@ -53,9 +53,9 @@ class Register extends Component {
               />
             </div>
             <div className="Register-Wrapper Register-Description">
-              <h2>Get Notify When the {coin} - {title} lottery Starts</h2>
+              <h2>Get Notify When the - {coin} {title} - lottery starts</h2>
               <p>
-                We‘re working day and night to launch it.
+                We‘re working day and night to get our product ready.
                 Support us and share to your friends! :)
               </p>
             </div>

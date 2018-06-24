@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Rocket from 'react-svg-loader!./../../images/rocket.svg';
+import Logo from 'react-svg-loader!./../../images/logo.svg';
 
 import MenuMain from './../../components/Menus/MenuMain';
 import CardDraw from './../../components/Cards/CardDraw';
@@ -32,13 +33,14 @@ class Home extends Component {
   renderRegister = (draw) => {
     this.props.setRegisterVisible(true);
     this.props.setRegister(draw);
+    dataLayer('Register_Popup');
   };
   render() {
     const { register, draws } = this.props;
 
     return (
       <div>
-        <div className="Header">
+        <div className="Header" id="register">
           <Row>
             <div className="MenuMain-Container">
               <MenuMain />
@@ -53,6 +55,9 @@ class Home extends Component {
               lg={{ span: 12 }}
               xl={{ span: 12 }}
             >
+              <div className="logo">
+                <Logo />
+              </div>
               <h1>
                 A Truly Decentralized “Winner Takes All” Open Source Lottery - Powered by Ethereum
               </h1>
@@ -86,7 +91,9 @@ class Home extends Component {
         <div className="Container-bg">
           <div className="Container How">
             <Row type="flex" justify="space-around" align="middle">
-              <h2>How it works</h2>
+              <div id="howitworks">
+                <h2>How it works</h2>
+              </div>
             </Row>
 
             <Row type="flex" justify="space-around" align="middle">
@@ -99,8 +106,8 @@ class Home extends Component {
               >
                 <CardHow
                   className="left"
-                  title="1. The contribution starts at specific bloc number"
-                  description="Contribution to the lottery will starts when the blockchain hits a specific block number. At this point, the smart contract will start accepting the contributions."
+                  title="1. Contribution starts on a pre-defined block number."
+                  description="The lottery will starts when the Ethereum blockchain is at a specific block number defined in the smart contract. At this point only, the smart contract will accept contributions."
                   background="how-card-bg-1.png"
                 />
               </Col>
@@ -126,8 +133,8 @@ class Home extends Component {
               >
                 <CardHow
                   className="right"
-                  title="2. Your Ethereum Address is your ticket"
-                  description="Send the right amount to the smart contract, your ethereum address becomes your ticket for the lottery!"
+                  title="2. Your Ethereum Address is your ticket."
+                  description="Send the exact amount to the smart contract. Your ethereum address becomes your ticket for the lottery!"
                   background="how-card-bg-2.png"
                 />
               </Col>
@@ -143,8 +150,8 @@ class Home extends Component {
               >
                 <CardHow
                   className="left"
-                  title="3. The winner is determined by drawing lots"
-                  description="At a specific bloc in the futur, an open-source and non-deterministic algorithm will determine the winning address."
+                  title="3. The winner is determined by a non-deterministic algorithm."
+                  description="At a specific block defined in the smart contract, our open-source and non-deterministic algorithm will determine the winning Ethereum address."
                   background="how-card-bg-3.png"
                 />
               </Col>
@@ -169,8 +176,8 @@ class Home extends Component {
               >
                 <CardHow
                   className="right"
-                  title="4. CASH OUT!"
-                  description="The Smart Contract will send the pot to the winning address."
+                  title="4. Cash out."
+                  description="The Smart Contract will send all the pot to the winning address. Winner takes all!"
                   background="how-card-bg-4.png"
                 />
               </Col>
@@ -182,12 +189,14 @@ class Home extends Component {
         <div className="Container-bg-grey">
           <div className="Container Gain">
             <Row type="flex" justify="space-around" align="middle">
-              <h2>Gain Repartition</h2>
+              <div id="gains">
+                <h2>Gains</h2>
+              </div>
             </Row>
             <Row>
               <CardGain
                 title="99%"
-                description="For the winner!"
+                description="To the winner!"
                 className="gain-card-top"
                 icon="winner.svg"
               />
@@ -212,8 +221,8 @@ class Home extends Component {
                 xl={{ span: 12 }}
               >
                 <CardGain
-                  title="0.5%"
-                  description="To Charity"
+                  title="0.8%"
+                  description="To A Charity :)"
                   className="gain-card-bot"
                   icon="charity.svg"
                 />
@@ -226,7 +235,7 @@ class Home extends Component {
                 xl={{ span: 12 }}
               >
                 <CardGain
-                  title="0.5%"
+                  title="0.2%"
                   description="To our Team"
                   className="gain-card-bot"
                   icon="team.svg"
@@ -240,7 +249,9 @@ class Home extends Component {
         <div className="Container-bg">
           <div className="Container Team">
             <Row type="flex" justify="space-around" align="middle">
-              <h2>Meet the Team</h2>
+              <div id="meettheteam">
+                <h2>Meet the Team</h2>
+              </div>
             </Row>
             <Row type="flex" justify="space-around" align="middle">
               <Col
@@ -251,10 +262,10 @@ class Home extends Component {
                 xl={{ span: 12 }}
               >
                 <CardTeam
-                  image="guillaume.png"
-                  name="GD"
+                  image="G"
+                  name="Guillaume"
                   title="Crypto Nerd"
-                  description="Growth Engineer, Product Designer and Front-end Developper. Hacker & Painter."
+                  description="Growth Engineering & Strategy. Product Designer and Full-stack Dev. Hacker."
                 />
               </Col>
               <Col
@@ -265,10 +276,10 @@ class Home extends Component {
                 xl={{ span: 12 }}
               >
                 <CardTeam
-                  image="manu.png"
-                  name="MV"
+                  image="M"
+                  name="Manu"
                   title="Crypto Nerd"
-                  description="Systems Engineer, Back-end Engineer & Ethereum Developper. Polytechnique & Telecom Paris."
+                  description="Systems Engineer. Back-end Engineer & Solicity Developper. Polytech & Telecom Paris."
                 />
               </Col>
             </Row>
